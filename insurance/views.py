@@ -28,6 +28,7 @@ def submit_ensured_details(request):
         m_first_name = request.POST.get("first_name",default=None)
         m_last_name = request.POST.get("last_name",default=None)
         m_email = request.POST.get("email",default=None)
+        m_ssn = request.POST.get("ssn",default=None)
         m_phoneno = request.POST.get("phoneno",default=None)
         m_address1 = request.POST.get("address1",default=None)
         m_address2 = request.POST.get("address2",default=None)
@@ -35,7 +36,7 @@ def submit_ensured_details(request):
         m_country = request.POST.get("country",default=None)
         m_zip_code = request.POST.get("zip_code",default=None)
         m_dob = request.POST.get("dob",default=None)
-        p = Insured(first_name=m_first_name,last_name=m_last_name,email=m_email,phone_number=m_phoneno,address1=m_address1,address2=m_address2,city=m_city,country=m_country,zip_code=m_zip_code,dob=m_dob)
+        p = Insured(first_name=m_first_name,last_name=m_last_name,email=m_email,ssn=m_ssn,phone_number=m_phoneno,address1=m_address1,address2=m_address2,city=m_city,country=m_country,zip_code=m_zip_code,dob=m_dob)
 
 
         p.save()
