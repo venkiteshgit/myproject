@@ -1,0 +1,20 @@
+{% if insured_details %}
+	<table>
+    {% for insured in insured_details %}
+            <tr>
+              <td>{{ insured.first_name }}</td>
+              <td>{{ insured.last_name }}</td>
+              <td>{{ insured.email }}</td>
+              <td>{{ insured.phone_number }}</td>
+              <td>{{ insured.address1 }}</td>
+              <td>{{ insured.address2 }}</td>
+              <td>{{ insured.city }}</td>
+              <td>{{ insured.country }}</td>
+              <td>{{ insured.zip_code }}</td>
+              <td>{{ insured.dob }}</td>
+            </tr>
+    {% endfor %}
+	</table>
+{% else %}
+    <p>No Records are available.</p>
+{% endif %}
