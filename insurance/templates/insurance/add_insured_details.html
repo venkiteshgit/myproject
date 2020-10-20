@@ -1,25 +1,127 @@
-<form action="/submit_ensured_details/" method="post">  {% csrf_token %}
-    <label for="first_name">Customer First Name: </label>
-    <input id="first_name" type="text" name="first_name" value="{{ c_first_name }}">
-    <label for="last_name">Customer Last Name: </label>
-    <input id="last_name" type="text" name="last_name" value="{{ c_last_name }}">
-    <label for="email">Email: </label>
-    <input id="email" type="text" name="email" value="{{ c_email }}">
-    <label for="ssn">SSN: </label>
-    <input id="ssn" type="number" name="ssn" value="{{ c_ssn }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>My Example</title>
+
+<!-- CSS -->
+<style>
+.myForm {
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.8em;
+margin-top: 10em;
+margin-left: 35em;
+background-color: #493E3F;
+width: 35em;
+height: 40em;
+padding: 1em;
+}
+
+.myForm * {
+box-sizing: border-box;
+}
+
+.myForm label {
+
+font-weight: bold;
+
+}
+
+.required
+{
+    color: red;
+}
+
+.myForm input,
+.myForm select,
+.myForm textarea {
+float: right;
+width: 20em;
+border: 1px solid #ccc;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size: 0.9em;
+padding: 0.3em;
+border-radius: 5px;
+}
+
+.myForm textarea {
+height: 100px;
+}
+
+.myForm button {
+padding: 1em;
+border-radius: 0.5em;
+background: #eee;
+border: none;
+font-weight: bold;
+margin-left: 14em;
+margin-top: 1.8em;
+background-color:#CCCCCC;
+}
+
+.myForm button:hover {
+background: #ccc;
+cursor: pointer;
+}
+</style>
+
+</head>
+<body   style="background-color:#736962;">
+	
+	
+<form  style="border-radius: 25px;" class="myForm" action="/submit_ensured_details/" method="post" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">  {% csrf_token %}
+
+	<h1>Enroll Customer: </h1>
+<p>
+    <label for="first_name">Customer First Name: </label><span class="required">*</span>
+    <input id="first_name" type="text" name="first_name" value="{{ c_first_name }}" required="required">
+</p>
+<p>
+    <label for="last_name">Customer Last Name: </label><span class="required">*</span>
+    <input id="last_name" type="text" name="last_name" value="{{ c_last_name }}" required="required">
+</p>
+<p>
+    <label for="email">Email: </label><span class="required">*</span>
+    <input id="email" type="email" name="email" value="{{ c_email }}" required="required">
+</p>
+<p>
+    <label for="ssn">SSN: </label><span class="required">*</span>
+    <input id="ssn" type="text" name="ssn" value="{{ c_ssn }}" required="required" pattern="^\d{3}-\d{2}-\d{4}$" title="The Social Security Number(NNN-NN-NNNN)">
+</p>
+<p>
     <label for="phoneno">Phone: </label>
-    <input id="phoneno" type="number" name="phoneno" value="{{ c_phoneno }}">
+    <input id="phoneno" type="text" name="phoneno" value="{{ c_phoneno }}" pattern="^\d{2}-\d{9}$" title="Phone number(NN-NNNNNNNNN)">
+</p>
+<p>
     <label for="address1">Address1: </label>
     <input id="address1" type="text" name="address1" value="{{ c_address1 }}">
+</p>
+<p>
     <label for="address2">Address 2: </label>
     <input id="address2" type="text" name="address2" value="{{ c_address2 }}">
+</p>
+<p>
     <label for="city">City: </label>
     <input id="city" type="text" name="city" value="{{ c_city }}">
+</p>
+<p>
     <label for="country">Country: </label>
-    <input id="country" type="text" name="country" value="{{ c_country }}">
+    <input id="country" type="text" name="country" value="{{ c_country }}" pattern="[A-Za-z]{3}" title="Three letter country code">
+</p>
+<p>
     <label for="zip_code">Zip Code: </label>
-    <input id="zip_code" type="number" name="zip_code" value="{{ c_zip_code }}">
-    <label for="dob">DOB: </label>
-    <input id="dob" type="date" name="dob" value="{{from_date|date:'YYYY-mm-dd'}}">
+    <input id="zip_code" type="text" name="zip_code" value="{{ c_zip_code }}"  pattern="^\d{5,}$" title="zip code must contain 5 digits(NNNNN)" >
+</p>
+<p>
+    <label for="dob">DOB: </label><span class="required">*</span>
+    <input id="dob" type="date" name="dob" required="required"  value="{{from_date|date:'YYYY-mm-dd'}}">
+</p>
+<p>
     <input type="submit" value="OK">
+</p>
+
 </form>
+</body>
+</html>
