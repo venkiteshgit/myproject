@@ -119,5 +119,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
 ALLOWED_HOSTS = ['*','ec2-18-222-208-27.us-east-2.compute.amazonaws.com']

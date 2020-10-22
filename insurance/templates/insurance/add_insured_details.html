@@ -6,14 +6,21 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>My Example</title>
 
-<!-- CSS -->
+{% load static %}
+
+<!--
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+<img src="{% static "my_app/example.jpg" %}" alt="My image">
+<link rel="stylesheet" type="text/css" href="{% static "insurance/css/enroll.css" %}" />
+-->
+
 <style>
 .myForm {
 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 font-size: 0.8em;
 margin-top: 10em;
 margin-left: 35em;
-background-color: #493E3F;
+background-color: #5499C7;
 width: 35em;
 height: 40em;
 padding: 1em;
@@ -68,7 +75,7 @@ cursor: pointer;
 </style>
 
 </head>
-<body   style="background-color:#736962;">
+<body   style="background-color:#ddd">
 	
 	
 <form  style="border-radius: 25px;" class="myForm" action="/submit_ensured_details/" method="post" enctype="application/x-www-form-urlencoded" action="/html/codes/html_form_handler.cfm">  {% csrf_token %}

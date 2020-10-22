@@ -1,5 +1,58 @@
-{% if insured_details %}
-	<table>
+<!DOCTYPE html>
+<html>
+<head>
+
+{% load static %}
+<!-- 
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+<img src="{% static "my_app/example.jpg" %}" alt="My image">
+<link rel="stylesheet" type="text/css" href="{% static "insurance/css/customers.css" %}" />
+-->
+
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5499C7;
+  color: white;
+}
+</style>
+
+
+</head>
+<body>
+
+	{% if insured_details %}
+<table id="customers">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>SSN</th>
+    <th>Phone No,</th>
+    <th>Address 1</th>
+    <th>Address 2</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Zip Code</th>
+    <th>Date of Birth</th>
+  </tr>
     {% for insured in insured_details %}
             <tr>
               <td>{{ insured.first_name }}</td>
@@ -19,3 +72,5 @@
 {% else %}
     <p>No Records are available.</p>
 {% endif %}
+</body>
+</html>
