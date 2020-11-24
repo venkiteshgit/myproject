@@ -1,0 +1,5 @@
+    2  curl -fsSL https://get.docker.com -o get-docker.sh
+sudo docker login    == userid = venkiteshtestprojects
+   10  sudo   docker run -d -p 8000:8000 venkiteshtestprojects/djangodemoapp:latest
+   11  sudo docker ps
+
