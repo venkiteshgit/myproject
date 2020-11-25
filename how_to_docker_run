@@ -1,4 +1,20 @@
-    2  curl -fsSL https://get.docker.com -o get-docker.sh
+  creating docker build image and ipload to docker hub
+
+   85  cd myproject
+   86  ls
+   87  cp /home/ubuntu/temp/user_login_and_register/Dockerfile  /home/ubuntu/temp/user_login_and_register/requirements.txt .
+   88  ls
+   89  vim Dockerfile
+   90  vim requirements.txt
+   91  sudo docker build -t vvenkitesh-app .
+   92  sudo docker run -p 8000:8000 vvenkitesh-app
+sudo docker login    == userid = venkiteshtestprojects
+ 
+
+
+installing docker 
+
+ 2  curl -fsSL https://get.docker.com -o get-docker.sh
 sudo docker login    == userid = venkiteshtestprojects
    10  sudo   docker run -d -p 8000:8000 venkiteshtestprojects/djangodemoapp:latest
    11  sudo docker ps
